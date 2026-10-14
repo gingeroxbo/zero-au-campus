@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>De zéro au campus</title>
+<meta name="description" content="Manuel d'anglais interactif pour francophones, du niveau débutant aux documents universitaires.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Zéro campus">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161c30" media="(prefers-color-scheme: dark)">
+<style>
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/bricolage-grotesque-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/bricolage-grotesque-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/bricolage-grotesque-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/bricolage-grotesque-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:800;font-display:swap;src:url("fonts/bricolage-grotesque-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:800;font-display:swap;src:url("fonts/bricolage-grotesque-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Charis SIL";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/charis-sil-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Charis SIL";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/charis-sil-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Literata";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/literata-italic-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Literata";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/literata-italic-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Literata";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/literata-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Literata";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/literata-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Literata";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/literata-normal-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Literata";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/literata-normal-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+</style>
+<style>/* Layout: sticky unit index on the left, one unit at a time in a reading column; notebook-ruled answer fields. */
+:root {
+  --bg: #f6f7fb;
+  --paper: #ffffff;
+  --ink: #1d3580;
+  --ink-2: #2f4bb0;
+  --ink-soft: #e7ebf8;
+  --pen: #c0392b;
+  --pen-soft: #fbeceb;
+  --ok: #1f7a4d;
+  --ok-soft: #e3f3ea;
+  --near: #a15c00;
+  --near-soft: #fdf1dd;
+  --text: #1c2030;
+  --muted: #5d6478;
+  --rule: #d5dbea;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Literata", Georgia, "Times New Roman", serif;
+  --ipa: "Charis SIL", "Lucida Sans Unicode", "DejaVu Sans", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1424; --paper: #161c30; --ink: #9db2ff; --ink-2: #b8c7ff; --ink-soft: #222b48;
+    --pen: #ff8a7a; --pen-soft: #3a1f22; --ok: #6fd3a0; --ok-soft: #173327; --near: #f0b357; --near-soft: #3a2c14;
+    --text: #e6e9f4; --muted: #9aa2bb; --rule: #2c3554; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1424; --paper: #161c30; --ink: #9db2ff; --ink-2: #b8c7ff; --ink-soft: #222b48;
+  --pen: #ff8a7a; --pen-soft: #3a1f22; --ok: #6fd3a0; --ok-soft: #173327; --near: #f0b357; --near-soft: #3a2c14;
+  --text: #e6e9f4; --muted: #9aa2bb; --rule: #2c3554; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 17px; line-height: 1.6; margin: 0; }
+h1, h2, h3, h4 { font-family: var(--display); color: var(--ink); text-wrap: balance; line-height: 1.15; margin: 0; }
+h2 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.015em; }
+h3 { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 0.6rem; }
+h4 { font-size: 1.05rem; font-weight: 600; }
+p { margin: 0 0 0.8rem; }
+strong { font-weight: 600; }
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 2.5px solid var(--ink-2); outline-offset: 2px; }
+.ipa { font-family: var(--ipa); color: var(--ink); }
+
+.shell { display: grid; grid-template-columns: 290px minmax(0, 1fr); min-height: 100vh; }
+.side { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow-y: auto; border-right: 1px solid var(--rule); background: var(--paper); padding: 1.2rem 1rem 2rem; }
+.brand { display: block; text-decoration: none; margin-bottom: 1rem; }
+.brand b { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--ink); letter-spacing: -0.02em; display: block; line-height: 1.05; }
+.brand span { font-size: 0.78rem; color: var(--muted); font-family: var(--display); }
+.overall { font-family: var(--display); font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+.bar { height: 6px; background: var(--ink-soft); border-radius: 3px; overflow: hidden; margin-top: 4px; }
+.bar i { display: block; height: 100%; background: var(--ink); border-radius: 3px; }
+.nav-sec { font-family: var(--display); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 1.1rem 0 0.35rem; display: flex; justify-content: space-between; }
+.nav-sec em { font-style: normal; color: var(--pen); font-weight: 700; }
+.nav a { display: grid; grid-template-columns: 1.9rem 1fr auto; align-items: center; gap: 0.4rem; padding: 0.32rem 0.45rem; border-radius: 6px; color: var(--text); text-decoration: none; font-family: var(--display); font-size: 0.88rem; line-height: 1.25; }
+.nav a:hover { background: var(--ink-soft); }
+.nav a.on { background: var(--ink); color: var(--paper); }
+.nav a .n { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.nav a.on .n { color: var(--paper); }
+.nav a .s { font-size: 0.72rem; font-variant-numeric: tabular-nums; color: var(--muted); }
+.nav a.on .s { color: var(--paper); opacity: 0.8; }
+.nav a .s.done { color: var(--ok); font-weight: 700; }
+
+.topbar { display: none; }
+main { min-width: 0; padding-block: 2rem 5rem; padding-inline: 2.5rem; }
+.col { max-width: 760px; margin: 0 auto; }
+
+.settings { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; font-family: var(--display); font-size: 0.82rem; color: var(--muted); margin-top: 1.2rem; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; }
+.seg button { border: 0; background: transparent; color: var(--text); padding: 0.25rem 0.7rem; font-size: 0.8rem; font-family: var(--display); }
+.seg button.on { background: var(--ink); color: var(--paper); }
+
+/* Home */
+.hero { padding: 1rem 0 1.5rem; border-bottom: 2px solid var(--ink); margin-bottom: 1.5rem; }
+.hero .eyebrow { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; color: var(--muted); }
+.hero h1 { font-size: clamp(2.6rem, 8vw, 4.2rem); font-weight: 800; letter-spacing: -0.035em; line-height: 0.95; margin: 0.4rem 0 0.8rem; }
+.levels { display: flex; gap: 0.35rem; flex-wrap: wrap; margin: 0.8rem 0; }
+.levels span { font-family: var(--display); font-weight: 700; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 4px; padding: 0.05rem 0.5rem; font-size: 0.85rem; }
+.cta { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ink); color: var(--paper); border: 0; padding: 0.7rem 1.2rem; border-radius: 8px; font-family: var(--display); font-weight: 600; text-decoration: none; font-size: 1rem; }
+.cta.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1rem; }
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem 1.6rem; margin: 1rem 0; }
+.method h4 { margin-bottom: 0.25rem; }
+.method p { font-size: 0.93rem; color: var(--muted); }
+.parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.part-card { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.1rem; }
+.part-card .lvl { font-family: var(--display); color: var(--pen); font-weight: 700; font-size: 0.85rem; }
+.part-card p { font-size: 0.9rem; color: var(--muted); }
+
+/* Tables */
+.table-wrap { overflow-x: auto; margin: 0.6rem 0 1.2rem; }
+table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+th { text-align: left; font-family: var(--display); font-weight: 600; color: var(--ink); background: var(--ink-soft); padding: 0.45rem 0.65rem; white-space: nowrap; }
+td { padding: 0.4rem 0.65rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.num { font-family: var(--display); font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* Unit */
+.unit-head { display: flex; gap: 1rem; align-items: center; padding-bottom: 1rem; border-bottom: 2px solid var(--ink); margin-bottom: 1.2rem; }
+.unit-num { font-family: var(--display); font-weight: 800; font-size: 2.4rem; color: var(--paper); background: var(--ink); min-width: 4.2rem; height: 4.2rem; display: flex; align-items: center; justify-content: center; border-radius: 8px; flex: none; }
+.unit-eyebrow { font-family: var(--display); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+.goals { background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1rem; }
+.goals .lab { font-family: var(--display); font-weight: 700; color: var(--ink); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.1em; }
+.goals ul { margin: 0.3rem 0 0; padding-left: 1.1rem; font-size: 0.95rem; }
+.tabs { display: flex; gap: 0.3rem; border-bottom: 1px solid var(--rule); margin: 1.2rem 0 0.6rem; position: sticky; top: 0; background: var(--bg); z-index: 3; padding-top: 0.4rem; overflow-x: auto; }
+.tabs button { border: 0; background: none; padding: 0.55rem 0.8rem; font-family: var(--display); font-weight: 600; color: var(--muted); border-bottom: 3px solid transparent; white-space: nowrap; }
+.tabs button.on { color: var(--ink); border-bottom-color: var(--ink); }
+.lesson ul { padding-left: 1.2rem; }
+.lesson li { margin-bottom: 0.3rem; }
+.examples { border-left: 3px solid var(--ink); padding: 0.3rem 0 0.3rem 0.9rem; margin: 0.5rem 0 1rem; }
+.ex-line { margin: 0 0 0.35rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.4rem; }
+.ex-line .en { font-weight: 600; color: var(--ink-2); }
+.ex-line .fr { color: var(--muted); font-style: italic; }
+.ex-line .fr::before { content: "= "; font-style: normal; }
+.tip { background: var(--pen-soft); border: 1px solid var(--pen); border-radius: 8px; padding: 0.6rem 0.9rem; margin: 0.8rem 0 1.1rem; }
+.tip-label { font-family: var(--display); font-weight: 700; color: var(--pen); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; display: block; }
+.tip p { margin: 0; }
+.say { border: 1px solid var(--rule); background: var(--paper); color: var(--ink); width: 1.9rem; height: 1.9rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; padding: 0; flex: none; align-self: center; }
+.say:hover { background: var(--ink-soft); }
+.say svg { width: 0.95rem; height: 0.95rem; }
+.say.playing { background: var(--ink); color: var(--paper); }
+
+.vocab-tools { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.4rem 0; font-family: var(--display); font-size: 0.85rem; }
+.vocab td.en { font-weight: 600; color: var(--ink-2); }
+.vocab td.ipa { white-space: nowrap; }
+.vocab tr td:first-child { width: 2.4rem; }
+.vocab.hide-fr td.fr span { filter: blur(6px); cursor: pointer; transition: filter .15s; }
+.vocab.hide-fr td.fr span.shown { filter: none; }
+.vocab.hide-en td.en span { filter: blur(6px); cursor: pointer; }
+.vocab.hide-en td.en span.shown { filter: none; }
+
+/* Exercises */
+.exercise { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 1.1rem 1.2rem; margin: 1.1rem 0; }
+.exercise h4 { margin-bottom: 0.7rem; }
+.ex-num { color: var(--pen); margin-right: 0.3rem; }
+.items { margin: 0; padding-left: 1.5rem; }
+.items > li { margin-bottom: 0.9rem; }
+.items .q { display: block; margin-bottom: 0.3rem; }
+.fill-line { line-height: 2.3; }
+input.blank, input.line, textarea { font: inherit; color: var(--ink-2); background: transparent; border: 0; border-bottom: 1.5px solid var(--ink); padding: 0 0.2rem; border-radius: 0; }
+input.blank { width: 7em; text-align: center; margin: 0 0.15rem; }
+input.line { width: 100%; padding: 0.25rem 0.2rem; }
+textarea { width: 100%; min-height: 9rem; border: 1px solid var(--rule); border-radius: 8px; padding: 0.6rem 0.8rem; line-height: 2rem;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(2rem - 1px), var(--rule) calc(2rem - 1px), var(--rule) 2rem); background-attachment: local; background-position: 0 0.6rem; }
+input:focus, textarea:focus { outline: none; border-color: var(--ink-2); box-shadow: 0 2px 0 var(--ink-2); }
+.st-ok { border-color: var(--ok) !important; color: var(--ok) !important; background: var(--ok-soft) !important; }
+.st-bad { border-color: var(--pen) !important; color: var(--pen) !important; background: var(--pen-soft) !important; }
+.st-near { border-color: var(--near) !important; color: var(--near) !important; background: var(--near-soft) !important; }
+.opts { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.opt { border: 1.5px solid var(--rule); background: var(--paper); color: var(--text); border-radius: 8px; padding: 0.3rem 0.75rem; text-align: left; font-size: 0.95rem; }
+.opt:hover { border-color: var(--ink-2); }
+.opt.sel { border-color: var(--ink); background: var(--ink-soft); color: var(--ink); font-weight: 600; }
+.fb { font-family: var(--display); font-size: 0.86rem; margin-top: 0.3rem; }
+.fb.ok { color: var(--ok); } .fb.bad { color: var(--pen); } .fb.near { color: var(--near); }
+.fb .accept { margin-left: 0.4rem; border: 1px solid currentColor; background: none; color: inherit; border-radius: 999px; padding: 0.05rem 0.6rem; font-size: 0.8rem; font-family: var(--display); }
+.passage { border: 1px solid var(--rule); background: var(--bg); padding: 0.9rem 1.1rem; margin: 0.4rem 0 1rem; border-radius: 8px; }
+.passage-tools { margin-bottom: 0.5rem; display: flex; gap: 0.5rem; align-items: center; font-family: var(--display); font-size: 0.85rem; color: var(--muted); }
+.ex-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed var(--rule); }
+.btn { border: 1.5px solid var(--ink); background: var(--ink); color: var(--paper); border-radius: 8px; padding: 0.4rem 0.95rem; font-family: var(--display); font-weight: 600; font-size: 0.9rem; }
+.btn.ghost { background: transparent; color: var(--ink); }
+.score { font-family: var(--display); font-weight: 700; font-variant-numeric: tabular-nums; margin-left: auto; }
+.score.good { color: var(--ok); } .score.mid { color: var(--near); } .score.low { color: var(--pen); }
+.model { margin-top: 0.6rem; background: var(--ok-soft); border-radius: 8px; padding: 0.7rem 0.9rem; font-size: 0.95rem; white-space: pre-line; }
+.model b { font-family: var(--display); color: var(--ok); display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.unit-score { background: var(--paper); border: 2px solid var(--ink); border-radius: 12px; padding: 1rem 1.2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; justify-content: space-between; margin-top: 1.4rem; }
+.unit-score .big { font-family: var(--display); font-size: 1.6rem; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+.pager { display: flex; justify-content: space-between; gap: 0.6rem; margin-top: 2rem; flex-wrap: wrap; }
+.plan-tbl input { width: 1.1rem; height: 1.1rem; accent-color: var(--ink); }
+.irr-tools { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.6rem 0; align-items: center; font-family: var(--display); font-size: 0.85rem; }
+.irr tr.top td:nth-child(2) { font-weight: 700; color: var(--ink); }
+.irr.hide-1 td:nth-child(3) span, .irr.hide-2 td:nth-child(4) span { filter: blur(6px); cursor: pointer; }
+.irr td span.shown { filter: none !important; }
+.note { font-size: 0.85rem; color: var(--muted); }
+
+@media (max-width: 860px) {
+  body { font-size: 16px; }
+  .shell { grid-template-columns: minmax(0, 1fr); }
+  .side { position: fixed; inset: 0 auto 0 0; width: min(86vw, 320px); z-index: 20; transform: translateX(-100%); transition: transform .2s; padding-top: calc(1.2rem + env(safe-area-inset-top, 0px)); box-shadow: 0 0 40px rgba(0,0,0,.25); }
+  .side.open { transform: none; }
+  .scrim { position: fixed; inset: 0; background: rgba(10,14,30,.4); z-index: 19; }
+  .topbar { display: flex; align-items: center; gap: 0.6rem; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); border-bottom: 1px solid var(--rule); padding: 0.5rem 16px; }
+  .topbar button { border: 1px solid var(--rule); background: var(--paper); color: var(--ink); border-radius: 8px; padding: 0.3rem 0.7rem; font-family: var(--display); font-weight: 600; }
+  .topbar b { font-family: var(--display); color: var(--ink); font-size: 0.95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  main { padding-inline: 16px; padding-block: 1.2rem 4rem; }
+  .tabs { top: var(--tbh, 3rem); }
+  .unit-num { min-width: 3.2rem; height: 3.2rem; font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  .exercise { padding: 0.9rem 0.9rem; }
+  .items { padding-left: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ---- App iPhone ---- */
+html { -webkit-text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; }
+.side { padding-top: calc(1.2rem + env(safe-area-inset-top, 0px)); padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); padding-left: max(1rem, env(safe-area-inset-left, 0px)); }
+main { padding-top: calc(2rem + env(safe-area-inset-top, 0px)); padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+.table-wrap { -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.saved { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 1rem 1.1rem; margin: 1.2rem 0; }
+.saved h3 { margin-top: 0; }
+.saved p { font-size: 0.95rem; }
+@media (max-width: 860px) {
+  body { font-size: 17px; }
+  .topbar { top: 0; padding: calc(0.45rem + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) 0.45rem max(16px, env(safe-area-inset-left, 0px)); }
+  .topbar button { min-height: 2.6rem; padding: 0.35rem 0.9rem; font-size: 1rem; }
+  .topbar b { font-size: 1.02rem; }
+  main { padding-top: 1.2rem; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+  .nav a { padding: 0.6rem 0.5rem; font-size: 1rem; }
+  .nav-sec { font-size: 0.78rem; }
+  .say { width: 2.6rem; height: 2.6rem; }
+  .say svg { width: 1.15rem; height: 1.15rem; }
+  .opts { flex-direction: column; gap: 0.5rem; }
+  .opt { width: 100%; min-height: 2.9rem; padding: 0.55rem 0.9rem; font-size: 1rem; }
+  .btn, .cta { min-height: 2.9rem; padding: 0.6rem 1.1rem; font-size: 1rem; }
+  .row .cta, .row .btn { flex: 1 1 auto; justify-content: center; text-align: center; }
+  .seg { max-width: 100%; }
+  .seg button { padding: 0.5rem 0.75rem; font-size: 0.92rem; min-height: 2.6rem; white-space: nowrap; }
+  .settings > span:not(.seg), .vocab-tools > span:not(.seg), .irr-tools > span:not(.seg) { flex-basis: 100%; }
+  .settings { font-size: 0.95rem; }
+  .tabs button { padding: 0.75rem 0.9rem; font-size: 1rem; }
+  input.blank { min-height: 2.4rem; }
+  input.line { min-height: 2.6rem; font-size: 17px; }
+  textarea { font-size: 17px; }
+  table { font-size: 0.98rem; }
+  td, th { padding: 0.55rem 0.7rem; }
+  .plan-tbl input { width: 1.5rem; height: 1.5rem; }
+  .fb .accept { padding: 0.35rem 0.8rem; font-size: 0.9rem; margin: 0.3rem 0 0 0; }
+  .pager .cta { flex: 1 1 40%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+<div class="topbar"><button id="menu" type="button" aria-label="Ouvrir le sommaire">Sommaire</button><b id="tb-title">De zéro au campus</b></div>
+<div class="scrim" id="scrim" hidden></div>
+<div class="shell"><aside class="side" id="side" aria-label="Sommaire"></aside><main><div class="col" id="content"><p class="note">Chargement du manuel…</p></div></main></div>
+<div id="toast" hidden style="position:fixed;left:50%;bottom:calc(1rem + env(safe-area-inset-bottom, 0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.6rem 1rem;border-radius:8px;font-family:var(--display);font-size:.9rem;z-index:30;max-width:90vw"></div>
+<script>(async () => {
+  // Le contenu (unités, plan, verbes) est dans contenu.json : réseau d'abord, copie gardée sur le téléphone sinon.
+  let D;
+  try { const r = await fetch('contenu.json', { cache: 'no-cache' }); if (!r.ok) throw 0; D = await r.json(); }
+  catch (e) { document.getElementById('content').innerHTML = '<p class="note">Impossible de charger le manuel. Ouvrez l\'app une première fois avec du réseau (wifi de préférence), puis elle marchera hors connexion.</p>'; return; }
+  const UNITS = [];
+  D.parts.forEach(p => p.units.forEach(u => { u.part = p; UNITS.push(u); }));
+  const L = 'abcdefgh';
+  const ICON = D.icon;
+  const KEY = 'dzac-v1';
+
+  // ---------- storage (best effort) ----------
+  let S = { scores: {}, plan: {}, ans: {}, rate: 0.9, tab: 'lesson', accent: 'en-US' };
+  try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(S, JSON.parse(raw)); } catch (e) {}
+  let saveT;
+  function save() { clearTimeout(saveT); saveT = setTimeout(() => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }, 200); }
+
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const inl = s => esc(s).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(^|[^\w*])\*([^*\s][^*]*?)\*(?=[^\w*]|$)/g, '$1<em>$2</em>');
+
+  // ---------- speech ----------
+  const synth = window.speechSynthesis;
+  let voices = [];
+  function loadVoices() { try { voices = synth ? synth.getVoices() : []; } catch (e) { voices = []; } }
+  loadVoices();
+  if (synth && 'onvoiceschanged' in synth) synth.onvoiceschanged = loadVoices;
+  function pickVoice() {
+    const want = S.accent;
+    const list = voices.filter(v => v.lang && v.lang.replace('_', '-').startsWith(want));
+    return list.find(v => /natural|google|samantha|daniel|aria|jenny|guy/i.test(v.name)) || list[0] || voices.find(v => /^en/.test(v.lang));
+  }
+  let playingBtn = null;
+  function say(text, btn) {
+    if (!synth) { flash('La lecture audio n\'est pas disponible dans ce navigateur.'); return; }
+    try {
+      synth.cancel();
+      if (playingBtn) playingBtn.classList.remove('playing');
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = S.accent; u.rate = S.rate;
+      const v = pickVoice(); if (v) u.voice = v;
+      if (btn) { btn.classList.add('playing'); playingBtn = btn; }
+      u.onend = u.onerror = () => { if (btn) btn.classList.remove('playing'); };
+      synth.speak(u);
+    } catch (e) { flash('La lecture audio n\'est pas disponible ici.'); }
+  }
+  function flash(msg) {
+    let t = $('#toast');
+    t.textContent = msg; t.hidden = false;
+    clearTimeout(flash.t); flash.t = setTimeout(() => { t.hidden = true; }, 3500);
+  }
+
+  // ---------- answer checking ----------
+  function base(s) {
+    s = String(s).toLowerCase().replace(/[’‘`´]/g, "'").replace(/[“”«»"]/g, '');
+    s = s.replace(/\bcan't\b/g, 'cannot').replace(/\bwon't\b/g, 'will not').replace(/\bshan't\b/g, 'shall not')
+      .replace(/n't\b/g, ' not').replace(/'m\b/g, ' am').replace(/'re\b/g, ' are').replace(/'ve\b/g, ' have').replace(/'ll\b/g, ' will')
+      .replace(/\bcannot\b/g, 'can not').replace(/\bok\b/g, 'okay');
+    s = s.replace(/[.,!?;:()\[\]]/g, ' ').replace(/\s+/g, ' ').trim();
+    return s;
+  }
+  function variants(s) {
+    const b = base(s);
+    const out = new Set([b]);
+    for (const x of [...out]) { if (/'s\b/.test(x)) { out.add(x.replace(/'s\b/g, ' is')); out.add(x.replace(/'s\b/g, ' has')); } }
+    for (const x of [...out]) { if (/'d\b/.test(x)) { out.add(x.replace(/'d\b/g, ' would')); out.add(x.replace(/'d\b/g, ' had')); } }
+    return [...out].map(x => x.replace(/\s+/g, ' ').trim());
+  }
+  function lev(a, b) {
+    const m = a.length, n = b.length; if (!m) return n; if (!n) return m;
+    let prev = Array.from({ length: n + 1 }, (_, j) => j);
+    for (let i = 1; i <= m; i++) {
+      const cur = [i];
+      for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      prev = cur;
+    }
+    return prev[n];
+  }
+  const NOTHING = ['', '-', '—', 'x', '0', 'ø', 'rien', 'nothing', 'none'];
+  // returns 'ok' | 'near' | 'bad' | 'empty'
+  function grade(given, answers) {
+    const g = String(given || '').trim();
+    if (answers.length === 1 && answers[0] === '-') return NOTHING.includes(g.toLowerCase()) ? 'ok' : 'bad';
+    if (!g) return 'empty';
+    const gv = variants(g);
+    let best = 99;
+    for (const a of answers) {
+      const av = variants(a);
+      for (const x of gv) for (const y of av) {
+        if (x === y) return 'ok';
+        best = Math.min(best, lev(x, y) / Math.max(4, y.length));
+      }
+    }
+    return best <= 0.12 ? 'near' : 'bad';
+  }
+
+  // ---------- navigation ----------
+  function nav() {
+    const done = UNITS.filter(u => unitScore(u).t > 0).length;
+    let h = `<a class="brand" href="#accueil"><b>De zéro<br>au campus</b><span>Manuel d'anglais interactif</span></a>`;
+    h += `<div class="overall">${done} / ${UNITS.length} unités travaillées<div class="bar"><i style="width:${(done / UNITS.length * 100).toFixed(1)}%"></i></div></div>`;
+    h += `<div class="nav"><a href="#accueil" data-r="accueil"><span class="n">·</span><span>Accueil et mode d'emploi</span></a><a href="#plan" data-r="plan"><span class="n">·</span><span>Plan d'étude</span></a>`;
+    for (const p of D.parts) {
+      h += `<div class="nav-sec"><span>Partie ${p.num} · ${esc(p.title)}</span><em>${esc(p.level)}</em></div>`;
+      for (const u of p.units) {
+        const sc = unitScore(u);
+        const pct = sc.t ? Math.round(sc.s / sc.t * 100) : null;
+        h += `<a href="#u${u.num}" data-r="u${u.num}"><span class="n">${u.num}</span><span>${esc(u.title)}</span><span class="s${pct !== null && pct >= 80 ? ' done' : ''}">${pct === null ? '' : pct + ' %'}</span></a>`;
+      }
+    }
+    h += `<div class="nav-sec"><span>Annexes</span></div><a href="#verbes" data-r="verbes"><span class="n">A</span><span>Verbes irréguliers</span></a></div>`;
+    $('#side').innerHTML = h;
+    markNav();
+  }
+  function markNav() { const r = route(); $$('#side a[data-r]').forEach(a => a.classList.toggle('on', a.dataset.r === r)); }
+  function route() { return (location.hash || '#accueil').slice(1) || 'accueil'; }
+
+  function unitScore(u) {
+    const r = S.scores[u.num] || {};
+    let s = 0, t = 0;
+    for (const k in r) { s += r[k].s; t += r[k].t; }
+    return { s, t };
+  }
+
+  function settingsHtml() {
+    return `<div class="settings"><span>Voix</span>
+      <span class="seg" role="group" aria-label="Accent"><button type="button" data-accent="en-US" class="${S.accent === 'en-US' ? 'on' : ''}">Américaine</button><button type="button" data-accent="en-GB" class="${S.accent === 'en-GB' ? 'on' : ''}">Britannique</button></span>
+      <span class="seg" role="group" aria-label="Vitesse"><button type="button" data-rate="0.65" class="${S.rate < 0.8 ? 'on' : ''}">Lente</button><button type="button" data-rate="0.9" class="${S.rate >= 0.8 && S.rate < 1 ? 'on' : ''}">Normale</button><button type="button" data-rate="1.05" class="${S.rate >= 1 ? 'on' : ''}">Rapide</button></span></div>`;
+  }
+
+  // ---------- progression : sauvegarde et restauration ----------
+  function progressHtml() {
+    return `<section class="saved" id="progression"><h3>Votre progression</h3>
+      <p>Vos réponses, vos scores et les semaines cochées sont gardés <strong>uniquement sur cet appareil</strong>, dans l'app. Rien n'est envoyé en ligne, et rien n'est partagé entre votre iPhone et votre Mac.</p>
+      <p><strong>Ce qui se perd :</strong> si vous supprimez l'app de l'écran d'accueil, si vous changez de téléphone, ou si vous effacez les données de Safari, la progression disparaît. Le manuel lui-même ne se perd jamais : il suffit de réinstaller l'app.</p>
+      <p>Pour ne rien perdre, faites de temps en temps une sauvegarde (un petit fichier à garder dans Fichiers ou à envoyer par AirDrop), puis restaurez-la sur le nouvel appareil.</p>
+      <div class="row"><button class="btn" type="button" data-backup>Sauvegarder ma progression</button><button class="btn ghost" type="button" data-restore>Restaurer une sauvegarde</button></div>
+      <input type="file" id="restore-file" accept="application/json,.json" hidden></section>`;
+  }
+  async function backup() {
+    const name = `zero-au-campus-progression-${new Date().toISOString().slice(0, 10)}.json`;
+    const blob = new Blob([JSON.stringify({ app: 'zero-au-campus', saved: new Date().toISOString(), data: S })], { type: 'application/json' });
+    try {
+      const file = new File([blob], name, { type: 'application/json' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Progression De zéro au campus' }); return; }
+    } catch (e) { if (e && e.name === 'AbortError') return; }
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  function restore(file) {
+    const rd = new FileReader();
+    rd.onload = () => {
+      try {
+        const j = JSON.parse(rd.result);
+        if (!j || j.app !== 'zero-au-campus' || !j.data) throw 0;
+        if (!confirm('Remplacer la progression de cet appareil par celle de la sauvegarde ?')) return;
+        S = Object.assign({ scores: {}, plan: {}, ans: {}, rate: 0.9, tab: 'lesson', accent: 'en-US' }, j.data);
+        try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
+        nav(); render(); flash('Progression restaurée.');
+      } catch (e) { flash('Ce fichier n\'est pas une sauvegarde de De zéro au campus.'); }
+    };
+    rd.readAsText(file);
+  }
+
+  // ---------- pages ----------
+  function home() {
+    const next = UNITS.find(u => unitScore(u).t === 0) || UNITS[0];
+    let h = `<section class="hero"><div class="eyebrow">Manuel d'anglais pour francophones</div><h1>De zéro au campus</h1>
+      <p>Toutes les bases de l'anglais, du niveau débutant jusqu'à la lecture de documents universitaires américains. 27 unités, ${D.stats.vocab} mots de vocabulaire, ${D.stats.items} exercices qui se corrigent tout seuls, et chaque exemple se lit à voix haute.</p>
+      <div class="levels">${['A1', 'A2', 'B1', 'B2', 'C1'].map(x => `<span>${x}</span>`).join('')}</div>
+      <div class="row"><a class="cta" href="#u${next.num}">${unitScore(UNITS[0]).t ? 'Continuer : unité ' + next.num : 'Commencer l\'unité 1'}</a><a class="cta ghost" href="#plan">Voir le plan sur 24 semaines</a></div>
+      ${settingsHtml()}</section>`;
+    h += `<h3>Mode d'emploi</h3><div class="method">${D.method.map(([t, d]) => `<div><h4>${esc(t)}</h4><p>${esc(d)}</p></div>`).join('')}</div>`;
+    h += `<h3>Ce qu'on peut attendre de six mois</h3><p>Avec 45 à 60 minutes par jour, six jours sur sept, en partant de zéro, il est réaliste d'atteindre en six mois un niveau B2 en lecture : comprendre l'essentiel d'un article universitaire avec un dictionnaire à portée de main. L'aisance orale complète demande plus de temps et beaucoup de conversation. Ce manuel vous donne toutes les bases ; la régularité fera le reste.</p>`;
+    h += progressHtml();
+    h += `<h3>Les quatre parties</h3><div class="parts">${D.parts.map(p => `<div class="part-card"><div class="lvl">${esc(p.level)}</div><h4>Partie ${p.num} · ${esc(p.title)}</h4><p>${esc(p.intro)}</p><a href="#u${p.units[0].num}">Unité ${p.units[0].num} : ${esc(p.units[0].title)}</a></div>`).join('')}</div>`;
+    return h;
+  }
+
+  function planPage() {
+    let h = `<h2>Plan d'étude sur 24 semaines</h2><p>Comptez 45 à 60 minutes par jour, six jours sur sept. Cochez chaque semaine terminée. Si vous prenez du retard, décalez, mais ne sautez pas d'unité.</p>`;
+    h += `<div class="table-wrap"><table class="plan-tbl"><thead><tr><th>Fait</th><th>Sem.</th><th>Unités</th><th>Contenu</th><th>En plus</th></tr></thead><tbody>`;
+    for (const [w, un, c, x] of D.plan) h += `<tr><td><input type="checkbox" id="plan-${w}" data-plan="${w}" ${S.plan[w] ? 'checked' : ''} aria-label="Semaine ${w} faite"></td><td class="num">${w}</td><td>${esc(un)}</td><td>${esc(c)}</td><td>${esc(x)}</td></tr>`;
+    h += `</tbody></table></div>`;
+    h += `<h3>Routine quotidienne conseillée</h3><ul><li>10 minutes : relire la leçon du jour et écouter les exemples.</li><li>15 minutes : exercices de l'unité, puis correction.</li><li>10 minutes : vocabulaire en cartes mémoire (Anki) ou avec le mode « cacher » de l'onglet Vocabulaire.</li><li>10 à 20 minutes : écoute ou lecture d'un vrai document (podcast, article, série en VO sous-titrée en anglais).</li></ul>`;
+    return h;
+  }
+
+  function verbsPage() {
+    let h = `<h2>Les verbes irréguliers</h2><p>Les ${D.irregular.length} verbes irréguliers les plus utiles. Ceux en gras sont les plus fréquents : apprenez-les d'abord. Cachez une colonne pour vous interroger, puis touchez une case pour la révéler.</p>`;
+    h += `<div class="irr-tools"><span>Cacher :</span><span class="seg"><button type="button" data-hide="0" class="on">Rien</button><button type="button" data-hide="1">Prétérit</button><button type="button" data-hide="2">Participe passé</button><button type="button" data-hide="3">Les deux</button></span></div>`;
+    h += `<div class="table-wrap"><table class="irr" id="irr"><thead><tr><th></th><th>Base</th><th>Prétérit</th><th>Participe passé</th><th>Français</th></tr></thead><tbody>`;
+    for (const [b, p, pp, fr] of D.irregular) {
+      h += `<tr class="${D.topVerbs.includes(b) ? 'top' : ''}"><td><button class="say" type="button" data-say="${esc(b + ', ' + p.replace(' / ', ', ') + ', ' + pp.replace(/\s*\((GB|US)\)/g, '').replace(' / ', ', '))}" aria-label="Écouter ${esc(b)}">${ICON}</button></td><td>${esc(b)}</td><td><span>${esc(p)}</span></td><td><span>${esc(pp)}</span></td><td>${esc(fr)}</td></tr>`;
+    }
+    return h + '</tbody></table></div>';
+  }
+
+  function unitPage(u) {
+    const idx = UNITS.indexOf(u);
+    let h = `<header class="unit-head"><span class="unit-num">${u.num}</span><div><div class="unit-eyebrow">Partie ${u.part.num} · ${esc(u.part.title)} · ${esc(u.part.level)}</div><h2>${esc(u.title)}</h2></div></header>`;
+    h += `<div class="goals"><span class="lab">Objectifs</span><ul>${u.goals.map(g => `<li>${inl(g)}</li>`).join('')}</ul></div>`;
+    const tab = S.tab || 'lesson';
+    h += `<div class="tabs" role="tablist"><button type="button" role="tab" data-tab="lesson" class="${tab === 'lesson' ? 'on' : ''}">Leçon</button><button type="button" role="tab" data-tab="vocab" class="${tab === 'vocab' ? 'on' : ''}">Vocabulaire · ${u.vocab.length}</button><button type="button" role="tab" data-tab="ex" class="${tab === 'ex' ? 'on' : ''}">Exercices · ${u.exercises.length}</button></div>`;
+    h += `<section data-pane="lesson" class="lesson" ${tab === 'lesson' ? '' : 'hidden'}>${u.lessonHtml}<div class="row"><button class="btn" type="button" data-goto="vocab">Passer au vocabulaire</button></div></section>`;
+    h += `<section data-pane="vocab" ${tab === 'vocab' ? '' : 'hidden'}><div class="vocab-tools"><span>S'interroger :</span><span class="seg"><button type="button" data-vhide="" class="on">Tout voir</button><button type="button" data-vhide="hide-fr">Cacher le français</button><button type="button" data-vhide="hide-en">Cacher l'anglais</button></span><button class="btn ghost" type="button" data-sayall>Tout écouter</button></div>
+      <div class="table-wrap"><table class="vocab" id="vocab"><thead><tr><th></th><th>Anglais</th><th>Prononciation</th><th>Français</th></tr></thead><tbody>${u.vocab.map(v => `<tr><td><button class="say" type="button" data-say="${esc(v.en.replace(/\s*\/\s*/g, ', ').replace(/\s*\((GB|US)\)/g, ''))}" aria-label="Écouter ${esc(v.en)}">${ICON}</button></td><td class="en"><span>${esc(v.en)}</span></td><td class="ipa">${esc(v.ipa)}</td><td class="fr"><span>${esc(v.fr)}</span></td></tr>`).join('')}</tbody></table></div>
+      <div class="row"><button class="btn" type="button" data-goto="ex">Passer aux exercices</button></div></section>`;
+    h += `<section data-pane="ex" ${tab === 'ex' ? '' : 'hidden'}>${u.exercises.map((e, i) => exHtml(u, e, i)).join('')}
+      <div class="unit-score" id="unit-score"></div></section>`;
+    h += `<nav class="pager">${idx > 0 ? `<a class="cta ghost" href="#u${UNITS[idx - 1].num}">← Unité ${UNITS[idx - 1].num}</a>` : '<span></span>'}${idx < UNITS.length - 1 ? `<a class="cta" href="#u${UNITS[idx + 1].num}">Unité ${UNITS[idx + 1].num} →</a>` : `<a class="cta" href="#verbes">Annexe : verbes irréguliers</a>`}</nav>`;
+    return h;
+  }
+
+  function fid(u, e, i, b) { return `a-${u.num}-${e}-${i}-${b}`; }
+  function val(id) { return S.ans[id] == null ? '' : S.ans[id]; }
+
+  function exHtml(u, e, ei) {
+    const id = `${u.num}.${ei + 1}`;
+    let h = `<div class="exercise" data-ex="${ei}"><h4><span class="ex-num">Exercice ${id}</span> ${inl(e.title)}</h4>`;
+    if (e.type === 'read') {
+      h += `<div class="passage-tools"><button class="say" type="button" data-say="${esc(e.passage.join(' '))}" aria-label="Écouter le texte">${ICON}</button><span>Écouter le texte</span></div><div class="passage">${e.passage.map(p => `<p>${inl(p)}</p>`).join('')}</div>`;
+    }
+    if (e.type === 'write') {
+      const k = fid(u, ei, 0, 0);
+      h += `<label class="note" for="${k}">Votre texte (en anglais) :</label><textarea id="${k}" data-k="${k}" spellcheck="false">${esc(val(k))}</textarea>
+        <div class="ex-actions"><button class="btn ghost" type="button" data-model>Voir un modèle</button><span class="note">Pas de correction automatique pour les rédactions : comparez avec le modèle.</span></div>
+        <div class="model" hidden><b>Modèle</b>${esc(e.model.join('\n'))}</div></div>`;
+      return h;
+    }
+    h += '<ol class="items">';
+    e.items.forEach((it, ii) => {
+      h += `<li data-i="${ii}">`;
+      if (it.kind === 'fill') {
+        h += '<span class="fill-line">' + it.segs.map((s, si) => {
+          if (!s.a) return inl(s.t);
+          const k = fid(u, ei, ii, si);
+          const w = Math.max(3.5, Math.min(14, Math.max(...s.a.map(a => a.length)) * 0.62 + 1.6));
+          return `<input class="blank" id="${k}" data-k="${k}" style="width:${w}em" value="${esc(val(k))}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Réponse">`;
+        }).join('') + '</span>';
+      } else if (it.kind === 'qcm') {
+        const k = fid(u, ei, ii, 0);
+        const sel = val(k);
+        h += `<span class="q">${inl(it.q)}</span><span class="opts" data-k="${k}">${it.options.map((o, oi) => `<button type="button" class="opt${String(sel) === String(oi) ? ' sel' : ''}" data-o="${oi}">${L[oi]}) ${inl(o)}</button>`).join('')}</span>`;
+      } else if (it.kind === 'trans' || it.kind === 'open') {
+        const k = fid(u, ei, ii, 0);
+        h += `<label class="q" for="${k}">${inl(it.q)}</label><input class="line" id="${k}" data-k="${k}" value="${esc(val(k))}" autocomplete="off" autocapitalize="off" spellcheck="false">`;
+      } else if (it.kind === 'dict') {
+        const k = fid(u, ei, ii, 0);
+        h += `<span class="ex-line"><button class="say" type="button" data-say="${esc(it.a[0])}" aria-label="Écouter">${ICON}</button><input class="line" id="${k}" data-k="${k}" value="${esc(val(k))}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Ce que vous entendez" style="flex:1;min-width:0"></span>`;
+      }
+      h += '<div class="fb" hidden></div></li>';
+    });
+    h += `</ol><div class="ex-actions"><button class="btn" type="button" data-check>Vérifier</button><button class="btn ghost" type="button" data-show>Afficher les réponses</button><button class="btn ghost" type="button" data-reset>Recommencer</button><span class="score"></span></div></div>`;
+    return h;
+  }
+
+  function checkEx(u, ei, reveal) {
+    const e = u.exercises[ei];
+    const box = $(`.exercise[data-ex="${ei}"]`);
+    let s = 0, t = 0;
+    e.items.forEach((it, ii) => {
+      const li = $(`li[data-i="${ii}"]`, box);
+      const fb = $('.fb', li);
+      fb.hidden = true; fb.className = 'fb'; fb.innerHTML = '';
+      if (it.kind === 'fill') {
+        let allOk = true; const exp = [];
+        it.segs.forEach((sg, si) => {
+          if (!sg.a) return;
+          const inp = $('#' + fid(u, ei, ii, si));
+          if (reveal && grade(inp.value, sg.a) !== 'ok') { inp.value = sg.a[0] === '-' ? '-' : sg.a[0]; S.ans[inp.dataset.k] = inp.value; }
+          const g = grade(inp.value, sg.a);
+          inp.classList.remove('st-ok', 'st-bad', 'st-near');
+          inp.classList.add(g === 'ok' ? 'st-ok' : g === 'near' ? 'st-near' : 'st-bad');
+          if (g !== 'ok') { allOk = false; exp.push(sg.a[0] === '-' ? 'rien (pas d\'article)' : sg.a.join(' ou ')); }
+        });
+        t++; if (allOk) s++;
+        else { fb.hidden = false; fb.classList.add('bad'); fb.textContent = 'Réponse : ' + exp.join(' · '); }
+      } else if (it.kind === 'qcm') {
+        const wrap = $('.opts', li); const k = wrap.dataset.k;
+        if (reveal) S.ans[k] = String(it.answer);
+        const sel = S.ans[k];
+        $$('.opt', wrap).forEach((b, oi) => {
+          b.classList.remove('st-ok', 'st-bad', 'sel');
+          if (String(oi) === String(sel)) b.classList.add('sel', oi === it.answer ? 'st-ok' : 'st-bad');
+          else if (sel != null && oi === it.answer) b.classList.add('st-ok');
+        });
+        t++; if (String(sel) === String(it.answer)) s++;
+        else { fb.hidden = false; fb.classList.add('bad'); fb.textContent = sel == null ? 'Pas de réponse. Bonne réponse : ' + L[it.answer] + ') ' + it.options[it.answer] : 'Bonne réponse : ' + L[it.answer] + ') ' + it.options[it.answer]; }
+      } else {
+        const inp = $('#' + fid(u, ei, ii, 0));
+        const self = S.ans[inp.dataset.k + '-self'];
+        let g = grade(inp.value, it.a);
+        if (reveal && g !== 'ok') { inp.value = it.a[0]; S.ans[inp.dataset.k] = inp.value; g = 'ok'; }
+        if (self && g !== 'ok' && inp.value.trim()) g = 'ok';
+        inp.classList.remove('st-ok', 'st-bad', 'st-near');
+        if (it.kind === 'open') {
+          // open questions are self-assessed: show the model, don't score
+          fb.hidden = false; fb.classList.add('ok'); fb.innerHTML = 'Réponse modèle : ' + esc(it.a[0]);
+          return;
+        }
+        inp.classList.add(g === 'ok' ? 'st-ok' : g === 'near' ? 'st-near' : 'st-bad');
+        t++;
+        if (g === 'ok') { s++; if (self) { fb.hidden = false; fb.classList.add('ok'); fb.textContent = 'Compté comme juste. Réponse proposée : ' + it.a[0]; } }
+        else {
+          fb.hidden = false; fb.classList.add(g === 'near' ? 'near' : 'bad');
+          const lead = g === 'empty' ? 'Pas de réponse. ' : g === 'near' ? 'Presque : comparez lettre par lettre (orthographe, terminaison, petit mot oublié). ' : '';
+          fb.innerHTML = esc(lead + 'Réponse attendue : ' + it.a[0]) + (it.a.length > 1 ? ' <span class="note">(aussi : ' + esc(it.a.slice(1, 3).join(' ; ')) + ')</span>' : '') +
+            (it.kind === 'trans' && g !== 'empty' ? `<button type="button" class="accept" data-accept="${inp.dataset.k}">Ma réponse veut dire la même chose</button>` : '');
+        }
+      }
+    });
+    const sc = $('.score', box);
+    if (t) {
+      sc.textContent = `${s} / ${t}`;
+      const r = s / t; sc.className = 'score ' + (r >= 0.8 ? 'good' : r >= 0.5 ? 'mid' : 'low');
+      if (!reveal) { S.scores[u.num] = S.scores[u.num] || {}; S.scores[u.num][ei] = { s, t }; }
+    }
+    save(); renderUnitScore(u); nav();
+  }
+
+  function renderUnitScore(u) {
+    const el = $('#unit-score'); if (!el) return;
+    const sc = unitScore(u);
+    const n = Object.keys(S.scores[u.num] || {}).length;
+    const auto = u.exercises.filter(e => e.type !== 'write').length;
+    if (!sc.t) { el.innerHTML = `<span>Faites les exercices puis cliquez sur « Vérifier » : votre score de l'unité s'affiche ici.</span>`; return; }
+    const pct = Math.round(sc.s / sc.t * 100);
+    const msg = n < auto ? `${n} exercice${n > 1 ? 's' : ''} vérifié${n > 1 ? 's' : ''} sur ${auto}.` : pct >= 80 ? 'Unité acquise. Passez à la suivante et revenez la refaire dans deux semaines.' : pct >= 50 ? 'Relisez la leçon, en particulier les encadrés « Attention », puis refaites les exercices ratés.' : 'Reprenez la leçon tranquillement demain, puis recommencez les exercices.';
+    el.innerHTML = `<div><div class="big">${pct} %</div><div class="note">${sc.s} bonnes réponses sur ${sc.t}</div></div><div style="flex:1;min-width:200px">${msg}</div>`;
+  }
+
+  function render() {
+    const r = route();
+    const main = $('#content');
+    let title = 'De zéro au campus';
+    if (r === 'plan') main.innerHTML = planPage(), title = 'Plan d\'étude';
+    else if (r === 'verbes') main.innerHTML = verbsPage(), title = 'Verbes irréguliers';
+    else if (/^u\d+$/.test(r) && UNITS.find(u => 'u' + u.num === r)) {
+      const u = UNITS.find(x => 'u' + x.num === r);
+      main.innerHTML = unitPage(u); title = `Unité ${u.num} · ${u.title}`;
+      renderUnitScore(u);
+      u.exercises.forEach((e, ei) => { if (S.scores[u.num] && S.scores[u.num][ei]) checkEx(u, ei, false); });
+    } else main.innerHTML = home();
+    $('#tb-title').textContent = title;
+    markNav();
+    closeSide();
+    window.scrollTo(0, 0);
+    if (typeof setTb === 'function') setTb();
+  }
+  function currentUnit() { const r = route(); return UNITS.find(u => 'u' + u.num === r); }
+
+  // ---------- events ----------
+  document.addEventListener('click', ev => {
+    const t = ev.target.closest('button, a, span');
+    if (!t) return;
+    if (t.matches('[data-say]')) { say(t.dataset.say, t); return; }
+    if (t.matches('[data-backup]')) { backup(); return; }
+    if (t.matches('[data-restore]')) { $('#restore-file').click(); return; }
+    if (t.matches('[data-accent]')) { S.accent = t.dataset.accent; save(); $$('[data-accent]').forEach(b => b.classList.toggle('on', b === t)); say('Hello! How are you today?'); return; }
+    if (t.matches('[data-rate]')) { S.rate = +t.dataset.rate; save(); $$('[data-rate]').forEach(b => b.classList.toggle('on', b === t)); say('This is my reading speed.'); return; }
+    if (t.matches('[data-tab]') || t.matches('[data-goto]')) {
+      const tab = t.dataset.tab || t.dataset.goto; S.tab = tab; save();
+      $$('[data-tab]').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+      $$('[data-pane]').forEach(p => { p.hidden = p.dataset.pane !== tab; });
+      if (t.dataset.goto) $('.tabs').scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    if (t.matches('[data-vhide]')) { const tb = $('#vocab'); tb.classList.remove('hide-fr', 'hide-en'); if (t.dataset.vhide) tb.classList.add(t.dataset.vhide); $$('#vocab span.shown').forEach(s => s.classList.remove('shown')); $$('[data-vhide]').forEach(b => b.classList.toggle('on', b === t)); return; }
+    if (t.matches('[data-hide]')) { const tb = $('#irr'); const v = +t.dataset.hide; tb.classList.toggle('hide-1', v === 1 || v === 3); tb.classList.toggle('hide-2', v === 2 || v === 3); $$('#irr span.shown').forEach(s => s.classList.remove('shown')); $$('[data-hide]').forEach(b => b.classList.toggle('on', b === t)); return; }
+    if (t.tagName === 'SPAN' && t.closest('#vocab, #irr')) { t.classList.add('shown'); return; }
+    if (t.matches('[data-sayall]')) {
+      const words = currentUnit().vocab.map(v => v.en.replace(/\s*\/\s*/g, ', ').replace(/\s*\((GB|US)\)/g, '')).join('. ');
+      say(words, t); return;
+    }
+    const exBox = t.closest('.exercise');
+    const u = currentUnit();
+    if (exBox && u) {
+      const ei = +exBox.dataset.ex;
+      if (t.matches('.opt')) {
+        const wrap = t.closest('.opts'); S.ans[wrap.dataset.k] = t.dataset.o; save();
+        $$('.opt', wrap).forEach(b => { b.classList.remove('st-ok', 'st-bad'); b.classList.toggle('sel', b === t); });
+        return;
+      }
+      if (t.matches('[data-check]')) { checkEx(u, ei, false); return; }
+      if (t.matches('[data-show]')) { checkEx(u, ei, true); return; }
+      if (t.matches('[data-accept]')) { S.ans[t.dataset.accept + '-self'] = 1; checkEx(u, ei, false); return; }
+      if (t.matches('[data-model]')) { const m = $('.model', exBox); m.hidden = !m.hidden; t.textContent = m.hidden ? 'Voir un modèle' : 'Cacher le modèle'; return; }
+      if (t.matches('[data-reset]')) {
+        Object.keys(S.ans).forEach(k => { if (k.startsWith(`a-${u.num}-${ei}-`)) delete S.ans[k]; });
+        if (S.scores[u.num]) delete S.scores[u.num][ei];
+        save();
+        exBox.outerHTML = exHtml(u, u.exercises[ei], ei);
+        renderUnitScore(u); nav();
+        return;
+      }
+    }
+  });
+  document.addEventListener('input', ev => {
+    const k = ev.target.dataset && ev.target.dataset.k;
+    if (k) { S.ans[k] = ev.target.value; delete S.ans[k + '-self']; save(); ev.target.classList.remove('st-ok', 'st-bad', 'st-near'); }
+  });
+  document.addEventListener('change', ev => {
+    if (ev.target.id === 'restore-file' && ev.target.files[0]) { restore(ev.target.files[0]); ev.target.value = ''; return; }
+    const p = ev.target.dataset && ev.target.dataset.plan;
+    if (p) { S.plan[p] = ev.target.checked; save(); }
+  });
+  document.addEventListener('keydown', ev => {
+    if (ev.key === 'Enter' && ev.target.matches('input.blank, input.line')) {
+      const all = $$('input.blank, input.line', ev.target.closest('.exercise'));
+      const i = all.indexOf(ev.target);
+      if (i < all.length - 1) all[i + 1].focus(); else $('[data-check]', ev.target.closest('.exercise')).click();
+      ev.preventDefault();
+    }
+  });
+  function openSide() { $('#side').classList.add('open'); $('#scrim').hidden = false; }
+  function closeSide() { $('#side').classList.remove('open'); $('#scrim').hidden = true; }
+  $('#menu').addEventListener('click', openSide);
+  $('#scrim').addEventListener('click', closeSide);
+  window.addEventListener('hashchange', render);
+
+  const setTb = () => document.documentElement.style.setProperty('--tbh', ($('.topbar').offsetHeight || 0) + 'px');
+  window.addEventListener('resize', setTb);
+
+  nav();
+  render();
+  setTb();
+
+  // ---------- hors connexion ----------
+  if ('serviceWorker' in navigator) {
+    const first = !navigator.serviceWorker.controller;
+    navigator.serviceWorker.register('sw.js').then(reg => navigator.serviceWorker.ready).then(() => {
+      if (first) flash('Tout le manuel est enregistré : l\'app marche maintenant hors connexion.');
+    }).catch(() => {});
+  }
+})();
+</script>
+</body>
+</html>
